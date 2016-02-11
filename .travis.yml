@@ -11,6 +11,6 @@ before_script:
   - npm prune
 deploy:
   provider: script
-  script: npm run semantic-release
+  script: ./bin/deploy
   on:
     branch: master
