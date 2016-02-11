@@ -1,7 +1,7 @@
 {
   "name": "cz-pivotal-conventional-changelog",
   "description": "Commitizen adapter that supports Pivotal integration and the conventional-changelog format.",
-  "files": ["dist"],
+  "files": ["dist", "src"],
   "main": "dist/index.js",
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist",
