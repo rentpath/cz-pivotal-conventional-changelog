@@ -41,7 +41,7 @@ export function prompter (cz, commit) {
     }, {
       type: 'input',
       name: 'subject',
-      message: 'Write a short, imperative tense description of the change:\n'
+      message: 'Write a terse, imperative description of the change:\n'
     }, {
       type: 'input',
       name: 'body',
