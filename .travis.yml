@@ -12,9 +12,7 @@ before_script:
 script:
   - npm test
   - npm build
-deploy:
-  provider: script
-  script: npm run semantic-release
-  on:
-    branch: master
-  skip_cleanup: true
+after_success:
+  - test $TRAVIS_PULL_REQUEST = false \
+    && test $TRAVIS_BRANCH = "master" \
+    && npm run semantic-release
