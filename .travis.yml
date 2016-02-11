@@ -9,8 +9,12 @@ node_js:
   - 'stable'
 before_script:
   - npm prune
+script:
+  - npm test
+  - npm build
 deploy:
   provider: script
-  script: ./bin/deploy
+  script: npm run semantic-release
   on:
     branch: master
+  skip_cleanup: true
