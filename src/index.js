@@ -75,9 +75,13 @@ export function prompter (cz, commit) {
 
     // Wrap these lines at 72 characters
     const body = wrap(answers.body, wrapOptions)
-    const pivotal = wrap('#' + answers.pivotal.trim().split(' ').join(' #'), wrapOptions)
+
+    const pivotalIDs = answers.pivotal.match(/[0-9]+/g)
+    const pivotal = pivotalIDs.map(function (id) {
+      return `#${id} (https://www.pivotaltracker.com/stories/show/${id})`
+    })
     const footer = wrap(answers.footer, wrapOptions)
 
-    commit(head + '\n\n' + body + '\n\n' + pivotal + '\n' + footer)
+    commit(head + '\n\n' + body + '\n\nPivotal ' + ((pivotalIDs.length === 1) ? 'Story' : 'Stories') + ':\n' + pivotal.join('\n') + '\n\n' + footer)
   })
 }
