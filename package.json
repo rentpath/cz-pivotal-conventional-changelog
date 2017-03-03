@@ -1,6 +1,6 @@
 {
   "name": "cz-pivotal-conventional-changelog",
-  "version": "1.0.3-1_sonicos"
+  "version": "1.0.3-1_sonicos",
   "description": "Commitizen adapter that supports Pivotal integration and the conventional-changelog format.",
   "files": ["dist", "src"],
   "main": "dist/index.js",
