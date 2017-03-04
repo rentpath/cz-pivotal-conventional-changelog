@@ -55,7 +55,7 @@ export function prompter (cz, commit) {
       name: 'footer',
       message: 'List any breaking changes:\n'
     }
-  ], function (answers) {
+  ]).then(function (answers) {
     const maxSummaryWidth = 50
     const maxLineWidth = 72
 
